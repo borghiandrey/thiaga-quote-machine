@@ -26,17 +26,32 @@ body {
   border-radius: 12px;
   box-shadow: -4px 4px 8px rgba($color: #000066, $alpha: 0.3);
   border-left: 8px solid $purple;
+  
+  @media (max-width: 768px) {
+    border-left: 4px solid $purple;
+    padding: 24px;
+  }
 
   .content {
     display: flex;
     justify-content: space-between;
     margin-bottom: 100px;
+    
+    @media (max-width: 904px) {
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 45px;
+    }
 
     .img-wrapper {
       width: 200px;
       height: 200px;
       border-radius: 20px;
       overflow: hidden;
+
+      @media (max-width: 904px) {
+        margin-bottom: 45px;
+      }
     
       img {
         width: 100%;
@@ -51,15 +66,32 @@ body {
       align-items: center;
       width: calc(100% - 230px);
 
+      @media (max-width: 904px) {
+        width: 100%;
+      }
+
       .quote-text{
+        display: flex;
         align-self: flex-start;
 
-        display: flex;
+        @media (max-width: 904px) {
+          align-self: center;
+          margin-bottom: 18px;
+        }
         
         .fas {
           font-size: 60px;
           display: inline;
           margin-right: 24px;
+
+          @media (max-width: 768px) {
+            font-size: 38px;
+          }
+
+          @media (max-width: 600px) {
+            font-size: 24px;
+            margin-right: 8px;
+          }
         }
         
         p {
@@ -67,15 +99,31 @@ body {
           font-size: 60px;
           font-weight: 600;
           font-family: 'Montserrat', sans-serif;
+
+          @media (max-width: 768px) {
+            font-size: 38px;
+          }
+
+          @media (max-width: 600px) {
+            font-size: 24px;
+          }
         }
       }
       .quote-author{
         align-self: flex-end;
 
+        @media (max-width: 904px) {
+          align-self: center;
+        }
+
         p {
           font-size: 22px;
           font-style: italic;
           font-family: serif;
+
+          @media (max-width: 600px) {
+            font-size: 16px;
+          }
         }
       }
     }
@@ -83,6 +131,10 @@ body {
   .buttons {
     display: flex;
     justify-content: space-evenly;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
     
     .btn {
       display: block;
@@ -95,15 +147,35 @@ body {
       white-space: nowrap;
       box-shadow: -3px 3px 8px rgba($color: #000066, $alpha: 0.3);
       transition: color, background-color, 175ms ease-in-out;
-    }
 
+      @media (max-width: 768px) {
+        text-align: center;
+        font-size: 16px;
+        width: 260px;
+        margin: 0 auto;
+        transition: none;
+      }
+
+      @media (max-width: 400px) {
+        font-size: 14px;
+        width: 190px;
+        padding: 12px 18px;
+      }
+    }
+    
     .btn-quote {
       background-color: $green;
       border: 2px solid $green;
 
+      @media (max-width: 768px) {
+        margin-bottom: 16px;
+      }
+
       &:hover {
-        background-color: white;
-        color: $green;
+        @media (min-width: 769px) {
+          background-color: white;
+          color: $green;
+        }
       }
     }
 
@@ -112,8 +184,10 @@ body {
       border: 2px solid $twt-color;
       
       &:hover {
-        background-color: white;
-        color: $twt-color;
+        @media (min-width: 769px) {
+          background-color: white;
+          color: $twt-color;
+        }
       }
 
       i, p {
